@@ -1,4 +1,4 @@
-#include<stdio.c>
+#include<stdio.h>
 void main(void){
   int i, n;
   float tn[21], tnpl[21], c;
