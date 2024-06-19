@@ -1,7 +1,13 @@
 #include<stdio.h>
-void main(void){
+void main(){
   int i, n;
-  float tn[21], tnpl[21], c;
+  float tn[21], tnpl[21], c, u, rho, tau, nu, dt, u_tt;
+
+  u = 700 * 0.02;
+  nu = 0.00001;
+  rho = 1.2;
+
+  u_tt =
 
   printf("Input c \n");
   scanf("%f",&c);
@@ -10,24 +16,24 @@ void main(void){
   for(i = 0; i <= 19; i++){
     tn[i] = 300.0;
   }
-  
+
   for(n = 0; n <=2000; n++){
-    
+
     for(i = 1; i <= 19; i++){
       tnpl[i] = tn[i] + c * (tn[i+1] - 2.0*tn[i] + tn[i-1]);
     }
-    
+
     tnpl[0] = 300.0;
     tnpl[20] = 2000.0;
-    
+
     for(i = 0; i <= 20; i++){
       tn[i] = tnpl[i];
     }
-    
+
   }
 
   for(i = 0; i <= 20; i++){
     printf("i = %d  T = %f \n", i, tn[i]);
   }
-  
+
 }
