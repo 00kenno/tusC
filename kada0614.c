@@ -12,7 +12,7 @@ void main(){
   u = 700 * 0.02;
   nu = 0.00001;
   rho = 1.2;
-  dy = 1 / 20 / 1000;//mm->m
+  dy = 0.001 / 20;//mm->m
 
   printf("u=%f\nnu=%f\nrho=%f\ndy=%f\n",u,nu,rho,dy);
   
