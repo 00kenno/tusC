@@ -12,7 +12,7 @@ void main(){
   u = 700 * 0.02;
   nu = 0.00001;
   rho = 1.2;
-  dy = 1 / 20;
+  dy = 1 / 20 / 1000;//mm->m
   
   printf("Input c \n");
   scanf("%f",&c);
@@ -24,7 +24,7 @@ void main(){
     un[i] = 0.0;
   }
 
-  for(n = 0; n <=2000; n++){//n = 2000*dt　まで繰り返す
+  for(n = 0; n <=20000; n++){//n = 20000*dt　まで繰り返す
 
     for(i = 1; i <= 19; i++){//unpl[1~19]を計算
       unpl[i] = un[i] + c * nu * (un[i+1] - 2.0*un[i] + un[i-1]);
@@ -43,9 +43,12 @@ void main(){
     printf("i = %d  u = %f \n", i, un[i]);
   }
 
-  tau = rho * nu * (un[i+1] - un[i]) / dy;
+  tau = rho * nu * (un[1] - un[0]) / dy;
+
+  printf("\n");
   printf("****************\n");
   printf("tau = %f\n", tau);
   printf("****************\n");
+  printf("\n");
 
 }
