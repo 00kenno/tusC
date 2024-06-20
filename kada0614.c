@@ -21,7 +21,7 @@ void main(){
   un[20] = u;
 
   for(i = 0; i <= 19; i++){
-    tn[i] = 0.0;
+    un[i] = 0.0;
   }
 
   for(n = 0; n <=2000; n++){//n = 2000*dt　まで繰り返す
@@ -40,7 +40,7 @@ void main(){
   }
 
   for(i = 0; i <= 20; i++){//un[0~20]を表示
-    printf("i = %d  u = %f \n", i, tn[i]);
+    printf("i = %d  u = %f \n", i, un[i]);
   }
 
   tau = rho * nu * (un[i+1] - un[i]) / dy;
